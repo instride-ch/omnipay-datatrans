@@ -1,0 +1,27 @@
+{
+    "name": "w-vision/omnipay-datatrans",
+    "type": "library",
+    "description": "Datatrans Gateway for the Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "datatrans",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment"
+    ],
+    "homepage": "https://github.com/w-vision/omnipay-datatrans",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Dominik Pfaffenbauer",
+            "email": "dominik@pfaffenbauer.at"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\Datatrans\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    }
+}
