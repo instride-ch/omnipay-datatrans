@@ -9,56 +9,11 @@ use Omnipay\Common\AbstractGateway;
  *
  * @TODO: add optional fields
  */
-class Gateway extends AbstractGateway
+class Gateway extends AbstractDatatransGateway
 {
     public function getName()
     {
         return 'Datatrans';
-    }
-
-    public function getDefaultParameters()
-    {
-        return array(
-            // general params
-            'merchantId'        => '',
-            'sign'              => '',
-            'testMode'          => true,
-
-            // template parameters
-            'theme'             => ''
-        );
-    }
-
-    /**
-     * @param $value
-     * @return $this
-     */
-    public function setMerchantId($value) {
-        return $this->setParameter('merchantId', $value);
-    }
-
-    /**
-     * get the merchant id
-     *
-     * @return string
-     */
-    public function getMerchantId() {
-        return  $this->getParameter('merchantId');
-    }
-
-    /**
-     * @param $value
-     * @return $this
-     */
-    public function setSign($value) {
-        return $this->setParameter('sign', $value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getSign() {
-        return $this->getParameter('sign');
     }
 
     /**
