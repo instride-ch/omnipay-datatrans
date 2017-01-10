@@ -14,7 +14,12 @@
 
 namespace Omnipay\Datatrans\Message;
 
-class PurchaseRequest extends AbstractRedirectRequest
+use Omnipay\Common\Message\RedirectResponseInterface;
+
+/**
+ * PayPal REST Authorize Response
+ */
+class XmlAuthorizationResponse extends XmlResponse implements RedirectResponseInterface
 {
 
 }

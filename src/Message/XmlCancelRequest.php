@@ -14,7 +14,17 @@
 
 namespace Omnipay\Datatrans\Message;
 
-class PurchaseRequest extends AbstractRedirectRequest
+/**
+ * Class XmlCancelRequest
+ *
+ * @package Omnipay\Datatrans\Message
+ */
+class XmlCancelRequest extends XmlSettlementRequest
 {
-
+    /**
+     * @return string
+     */
+    public function getRequestType() {
+        return static::DATATRANS_REQUEST_TYPE_DOA;
+    }
 }

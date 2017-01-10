@@ -15,6 +15,7 @@
 namespace Omnipay\Datatrans;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Datatrans\Message\TokenizeRequest;
 
 /**
  * Datatrans Gateway
@@ -70,5 +71,14 @@ abstract class AbstractDatatransGateway extends AbstractGateway
     public function getSign()
     {
         return $this->getParameter('sign');
+    }
+
+    /**
+     * @param array $options
+     *
+     * @return TokenizeRequest
+     */
+    public function createCard(array $options = array()) {
+        return $this->createRequest('\Omnipay\Datatrans\Message\TokenizeRequest', $options);
     }
 }

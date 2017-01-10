@@ -14,8 +14,6 @@
 
 namespace Omnipay\Datatrans\Message;
 
-use Omnipay\Common\Message\AbstractResponse;
-
 /**
  * Datatrans Complete Purchase Response
  */
@@ -32,30 +30,10 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * @return string
+     * @return bool
      */
-    public function getMessage()
+    public function isRedirect()
     {
-        if (!$this->isSuccessful()) {
-            return $this->data['responseMessage'];
-        }
-
-        return '';
-    }
-
-    /**
-     * @return string
-     */
-    public function getTransactionReference()
-    {
-        return isset($this->data['refno']) ? $this->data['refno'] : '';
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStatus()
-    {
-        return $this->data['status'];
+        return false;
     }
 }

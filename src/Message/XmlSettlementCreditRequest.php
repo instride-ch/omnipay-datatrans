@@ -14,7 +14,17 @@
 
 namespace Omnipay\Datatrans\Message;
 
-class PurchaseRequest extends AbstractRedirectRequest
+/**
+ * Class XmlSettlementCreditRequest
+ *
+ * @package Omnipay\Datatrans\Message
+ */
+class XmlSettlementCreditRequest extends XmlSettlementRequest
 {
-
+    /**
+     * @return string
+     */
+    public function getTransactionType() {
+        return static::DATATRANS_TRANSACTION_TYPE_CREDIT;
+    }
 }

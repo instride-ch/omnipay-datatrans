@@ -14,7 +14,14 @@
 
 namespace Omnipay\Datatrans\Message;
 
-class PurchaseRequest extends AbstractRedirectRequest
+use Omnipay\Common\Message\RedirectResponseInterface;
+
+/**
+ * Class TokenizeResponse
+ *
+ * @package Omnipay\Datatrans\Message
+ */
+class TokenizeResponse extends AbstractResponse implements RedirectResponseInterface
 {
 
 }
