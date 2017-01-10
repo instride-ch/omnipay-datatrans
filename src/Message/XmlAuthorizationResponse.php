@@ -21,5 +21,15 @@ use Omnipay\Common\Message\RedirectResponseInterface;
  */
 class XmlAuthorizationResponse extends XmlResponse implements RedirectResponseInterface
 {
+    /**
+     * @return null
+     */
+    public function getUppTransactionId()
+    {
+        if (isset($this->data['response'])) {
+            return $this->data['response']['uppTransactionId'];
+        }
 
+        return null;
+    }
 }

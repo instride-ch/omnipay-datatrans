@@ -92,7 +92,7 @@ class XmlSettlementRequest extends XmlRequest
 
         $requestType = $this->getRequestType();
 
-        if(is_null($requestType)) {
+        if (is_null($requestType)) {
             $requestType = self::DATATRANS_REQUEST_TYPE_COA;
         }
 
@@ -123,14 +123,16 @@ class XmlSettlementRequest extends XmlRequest
      *
      * @return static
      */
-    public function setUppTransactionId($value) {
+    public function setUppTransactionId($value)
+    {
         return $this->setParameter("uppTransactionId", $value);
     }
 
     /**
      * @return string
      */
-    public function getUppTransactionId() {
+    public function getUppTransactionId()
+    {
         return $this->getParameter("uppTransactionId");
     }
 
@@ -139,21 +141,24 @@ class XmlSettlementRequest extends XmlRequest
      *
      * @return static
      */
-    public function setRequestType($value) {
+    public function setRequestType($value)
+    {
         return $this->setParameter("requestType", $value);
     }
 
     /**
      * @return string
      */
-    public function getRequestType() {
+    public function getRequestType()
+    {
         return $this->getParameter("requestType");
     }
 
     /**
      * @return string
      */
-    public function getTransactionType() {
+    public function getTransactionType()
+    {
         return static::DATATRANS_TRANSACTION_TYPE_DEBIT;
     }
 

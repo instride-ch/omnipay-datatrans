@@ -24,7 +24,8 @@ class XmlSettlementCreditRequest extends XmlSettlementRequest
     /**
      * @return string
      */
-    public function getTransactionType() {
+    public function getTransactionType()
+    {
         return static::DATATRANS_TRANSACTION_TYPE_CREDIT;
     }
 }

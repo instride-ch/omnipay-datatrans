@@ -147,6 +147,7 @@ abstract class XmlRequest extends AbstractRequest
             $this->getRequestXml()->asXML()
         );
 
+
         // Might be useful to have some debug code here, PayPal especially can be
         // a bit fussy about data formats and ordering.  Perhaps hook to whatever
         // logging engine is being used.
@@ -159,7 +160,11 @@ abstract class XmlRequest extends AbstractRequest
             $body = $httpResponse->getBody(true);
             $xmlResponse = !empty($body) ? $httpResponse->xml() : '';
 
-            if($xmlResponse instanceof \SimpleXMLElement) {
+            /*var_dump($httpResponse->getRawHeaders());
+            echo $httpResponse->getBody(true);
+            exit;*/
+
+            if ($xmlResponse instanceof \SimpleXMLElement) {
                 $response = $xmlResponse->body->transaction;
 
                 $response = json_decode(json_encode($response), true);

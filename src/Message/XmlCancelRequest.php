@@ -24,7 +24,8 @@ class XmlCancelRequest extends XmlSettlementRequest
     /**
      * @return string
      */
-    public function getRequestType() {
+    public function getRequestType()
+    {
         return static::DATATRANS_REQUEST_TYPE_DOA;
     }
 }

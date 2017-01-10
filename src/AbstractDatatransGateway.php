@@ -78,7 +78,8 @@ abstract class AbstractDatatransGateway extends AbstractGateway
      *
      * @return TokenizeRequest
      */
-    public function createCard(array $options = array()) {
+    public function createCard(array $options = array())
+    {
         return $this->createRequest('\Omnipay\Datatrans\Message\TokenizeRequest', $options);
     }
 }

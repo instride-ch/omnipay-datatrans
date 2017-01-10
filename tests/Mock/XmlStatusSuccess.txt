@@ -1,0 +1,35 @@
+HTTP/1.1 200 OK
+Expires: Sat, 6 May 1995 12:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+P3P: CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+Strict-Transport-Security: max-age=15768000; includeSubdomains
+X-XSS-Protection: 1; mode=block
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 749
+Date: Tue, 10 Jan 2017 14:54:56 GMT
+Server: -
+
+<?xml version='1.0' encoding='UTF-8'?>
+<statusService version='3'>
+  <body merchantId='TEST-TOKEN-123' status='accepted'>
+    <transaction refno='1' trxStatus='response'>
+      <request>
+        <merchantId>TEST-TOKEN-123</merchantId>
+        <sign>TEST-SIGN-123</sign>
+        <uppTransactionId>44E89981F8714392Y</uppTransactionId>
+        <refno>1</refno>
+        <reqtype>STA</reqtype>
+      </request>
+      <response itemNr='1'>
+        <responseCode>2</responseCode>
+        <responseMessage>Trx debit waiting for daily settlement process</responseMessage>
+        <refno>1</refno>
+        <amount>10000</amount>
+        <currency>CHF</currency>
+        <authorizationCode>419281864</authorizationCode>
+        <pmethod>VIS</pmethod>
+      </response>
+    </transaction>
+  </body>
+</statusService>

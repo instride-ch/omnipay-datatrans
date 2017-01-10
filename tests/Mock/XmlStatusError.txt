@@ -1,0 +1,37 @@
+HTTP/1.1 200 OK
+Expires: Sat, 6 May 1995 12:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+P3P: CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+Strict-Transport-Security: max-age=15768000; includeSubdomains
+X-XSS-Protection: 1; mode=block
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 861
+Date: Tue, 10 Jan 2017 15:03:39 GMT
+Server: -
+
+<?xml version='1.0' encoding='UTF-8'?>
+<statusService version='3'>
+  <body merchantId='TEST-TOKEN-123' status='accepted'>
+    <transaction refno='1' trxStatus='response'>
+      <request>
+        <merchantId>TEST-TOKEN-123</merchantId>
+        <sign>TEST-SIGN-123</sign>
+        <uppTransactionId>44E89981F8714392X</uppTransactionId>
+        <refno>1</refno>
+        <reqtype>STA</reqtype>
+      </request>
+      <response>
+        <responseCode>20</responseCode>
+        <responseMessage>UPP record not found</responseMessage>
+        <refno></refno>
+        <refno2></refno2>
+        <refno3></refno3>
+        <amount></amount>
+        <currency></currency>
+        <authorizationCode></authorizationCode>
+        <pmethod></pmethod>
+      </response>
+    </transaction>
+  </body>
+</statusService>

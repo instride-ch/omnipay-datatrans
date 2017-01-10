@@ -1,0 +1,34 @@
+HTTP/1.1 200 OK
+Expires: Sat, 6 May 1995 12:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+P3P: CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+Strict-Transport-Security: max-age=15768000; includeSubdomains
+X-XSS-Protection: 1; mode=block
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 792
+Date: Tue, 10 Jan 2017 14:56:09 GMT
+Server: -
+
+<?xml version='1.0' encoding='UTF-8'?>
+<paymentService version='3'>
+  <body merchantId='TEST-TOKEN-123' status='accepted'>
+    <transaction refno='1' trxStatus='error'>
+      <request>
+        <merchantId>TEST-TOKEN-123</merchantId>
+        <sign>TEST-SIGN-123</sign>
+        <amount>10000</amount>
+        <currency>CHF</currency>
+        <uppTransactionId>44E89981F8714392Y</uppTransactionId>
+        <refno>1</refno>
+        <reqtype>COA</reqtype>
+        <transtype>05</transtype>
+      </request>
+      <error>
+        <errorCode>1012</errorCode>
+        <errorMessage>cannot be settled</errorMessage>
+        <errorDetail>trx has been settled already</errorDetail>
+      </error>
+    </transaction>
+  </body>
+</paymentService>

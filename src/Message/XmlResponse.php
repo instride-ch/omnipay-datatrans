@@ -96,7 +96,7 @@ class XmlResponse extends AbstractResponse
             return $this->data['error']['errorDetail'];
         }
 
-        if(isset($this->data['response'])) {
+        if (isset($this->data['response'])) {
             return $this->data['response']['responseMessage'];
         }
 
@@ -108,11 +108,11 @@ class XmlResponse extends AbstractResponse
      */
     public function getCode()
     {
-        if(isset($this->data['response'])) {
+        if (isset($this->data['response'])) {
             return $this->data['response']['responseCode'];
         }
 
-        if(isset($this->data['error'])) {
+        if (isset($this->data['error'])) {
             return $this->data['error']['errorCode'];
         }
 
