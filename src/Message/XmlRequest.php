@@ -159,11 +159,7 @@ abstract class XmlRequest extends AbstractRequest
             // Empty response body should be parsed also as and empty array
             $body = $httpResponse->getBody(true);
             $xmlResponse = !empty($body) ? $httpResponse->xml() : '';
-
-            /*var_dump($httpResponse->getRawHeaders());
-            echo $httpResponse->getBody(true);
-            exit;*/
-
+            
             if ($xmlResponse instanceof \SimpleXMLElement) {
                 $response = $xmlResponse->body->transaction;
 
