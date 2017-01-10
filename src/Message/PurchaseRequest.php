@@ -7,7 +7,7 @@ use Omnipay\Common\CreditCard;
 class PurchaseRequest extends AbstractRequest
 {
     protected $optionalParams = array(
-        'theme'
+
     );
 
     public function getData()
@@ -26,7 +26,7 @@ class PurchaseRequest extends AbstractRequest
             $value = $this->getParameter($param);
 
             if ($value !== '') {
-                $data[strtoupper($param)] = $value;
+                $data[$param] = $value;
             }
         }
 

@@ -8,7 +8,7 @@ class CompletePurchaseRequest extends AbstractRequest
 {
     public function getData()
     {
-        return $_REQUEST;
+        return $this->httpRequest->request->all();
     }
 
     // Sending the 1.x way

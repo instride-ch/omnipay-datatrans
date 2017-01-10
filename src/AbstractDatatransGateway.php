@@ -20,10 +20,7 @@ abstract class AbstractDatatransGateway extends AbstractGateway
             // general params
             'merchantId'        => '',
             'sign'              => '',
-            'testMode'          => true,
-
-            // template parameters
-            'theme'             => ''
+            'testMode'          => true
         );
     }
 

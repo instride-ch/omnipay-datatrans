@@ -74,7 +74,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
     {
         $req = $this->getRequest();
 
-        if($req->getTestMode() === 'true') {
+        if($req->getTestMode()) {
             return $this->testEndpoint;
         }
 

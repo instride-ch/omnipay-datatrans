@@ -11,9 +11,9 @@ class CompletePurchaseResponse extends AbstractResponse
 {
     public function isSuccessful()
     {
-        $status = $this->getCode();
+        $status = $this->getStatus();
 
-        return $status === 1;
+        return $status === 'success';
     }
 
     public function getMessage()
@@ -25,13 +25,13 @@ class CompletePurchaseResponse extends AbstractResponse
         return '';
     }
 
-    public function getCode()
-    {
-        return isset($this->data['responseCode']) ? $this->data['responseCode'] : '';
-    }
 
     public function getTransactionReference()
     {
         return isset($this->data['refno']) ? $this->data['refno'] : '';
+    }
+
+    public function getStatus() {
+        return $this->data['status'];
     }
 }
