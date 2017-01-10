@@ -57,9 +57,6 @@ class XmlAuthorizationRequest extends XmlRequest
             'aliasCC'    => $this->getCard()->getNumber(),
             'expm'       => $this->getCard()->getExpiryMonth(),
             'expy'       => $this->getCard()->getExpiryDate('y'),
-            'uppCustomerDetails' => [
-                'uppCustomerIpAddress' => $_SERVER['REMOTE_ADDR']
-            ],
             'useAlias' => 'no'
         );
 
