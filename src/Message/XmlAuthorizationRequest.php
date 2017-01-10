@@ -24,10 +24,10 @@ class XmlAuthorizationRequest extends XmlRequest
     /**
      * @var array
      */
-    protected $optionalParameters = [
+    protected $optionalParameters = array(
         'reqtype',
         'uppCustomerIpAddress'
-    ];
+    );
 
     /**
      * @var string

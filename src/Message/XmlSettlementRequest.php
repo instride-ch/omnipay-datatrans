@@ -24,9 +24,9 @@ class XmlSettlementRequest extends XmlRequest
     /**
      * @var array
      */
-    protected $optionalParameters = [
+    protected $optionalParameters = array(
         'transtype', 'acqAuthorizationCode', 'errorEmail'
-    ];
+    );
 
     /**
      * @var string

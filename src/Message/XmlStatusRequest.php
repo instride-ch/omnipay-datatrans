@@ -24,9 +24,9 @@ class XmlStatusRequest extends XmlSettlementRequest
     /**
      * @var array
      */
-    protected $optionalParameters = [
+    protected $optionalParameters = array(
         'reqtype'
-    ];
+    );
 
     /**
      * @var string
