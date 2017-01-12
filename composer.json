@@ -11,7 +11,7 @@
         "payment"
     ],
     "homepage": "https://github.com/w-vision/omnipay-datatrans",
-    "license": "GPL-3.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dominik Pfaffenbauer",
