@@ -78,7 +78,11 @@ class GatewayTest extends GatewayTestCase
             'uppMsgType' => 'web'
         );
 
-        $this->getHttpRequest()->request->replace($data);
+        //$this->getHttpRequest()->request->replace($data);
+        // Response comes from an redirected POST Request, so we need to use either $_POST or $_REQUEST
+        foreach($data as $key=>$value) {
+            $_REQUEST[$key] = $value;
+        }
 
         $response = $this->gateway->completePurchase($this->options)->send();
 
@@ -116,7 +120,11 @@ class GatewayTest extends GatewayTestCase
 
         // create sha hash for the given data
 
-        $this->getHttpRequest()->request->replace($data);
+        //$this->getHttpRequest()->request->replace($data);
+        // Response comes from an redirected POST Request, so we need to use either $_POST or $_REQUEST
+        foreach($data as $key=>$value) {
+            $_REQUEST[$key] = $value;
+        }
 
         $response = $this->gateway->completePurchase($this->options)->send();
 
@@ -125,7 +133,7 @@ class GatewayTest extends GatewayTestCase
 
     public function testCompletePurchaseCancel()
     {
-        $this->getHttpRequest()->request->replace(array(
+        $data = array(
             'sign' => '123',
             'merchantId' => 'asdf',
             'uppTransactionId' => '1',
@@ -136,7 +144,13 @@ class GatewayTest extends GatewayTestCase
             'refno' => '1',
             'status' => 'cancel',
             'uppMsgType' => 'web'
-        ));
+        );
+
+        //$this->getHttpRequest()->request->replace($data);
+        // Response comes from an redirected POST Request, so we need to use either $_POST or $_REQUEST
+        foreach($data as $key=>$value) {
+            $_REQUEST[$key] = $value;
+        }
 
         $response = $this->gateway->completePurchase($this->options)->send();
 

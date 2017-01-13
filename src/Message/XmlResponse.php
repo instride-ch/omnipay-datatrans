@@ -22,6 +22,14 @@ use Omnipay\Common\Message\RequestInterface;
 class XmlResponse extends AbstractResponse
 {
     /**
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->httpRequest->request->all();
+    }
+
+    /**
      * @return bool
      */
     public function isRedirect()
