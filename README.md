@@ -20,7 +20,7 @@ Omnipay can be installed using [Composer](https://getcomposer.org/). [Installati
 
 Run the following command to install omnipay and the datatrans gateway:
 
-    composer require w-vision/omnipay-datatrans~0.1
+    composer require w-vision/omnipay-datatrans:^1.0.0
 
 ## Basic Usage
 
