@@ -26,7 +26,7 @@ class XmlResponse extends AbstractResponse
      */
     public function getData()
     {
-        return $this->httpRequest->request->all();
+        return $this->data;
     }
 
     /**
