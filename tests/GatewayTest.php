@@ -51,7 +51,7 @@ class GatewayTest extends GatewayTestCase
         $this->assertTrue($response->isRedirect());
         $this->assertEquals('POST', $response->getRedirectMethod());
         $this->assertEquals($data, $response->getRedirectData());
-        $this->assertStringStartsWith('https://pilot.datatrans.biz/upp/jsp/upStart.jsp', $response->getRedirectUrl());
+        $this->assertStringStartsWith('https://pay.datatrans.com/upp/jsp/upStart.jsp', $response->getRedirectUrl());
     }
 
     public function testCompletePurchaseSuccess()

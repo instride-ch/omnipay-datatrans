@@ -27,13 +27,13 @@ abstract class XmlRequest extends AbstractRequest
      *
      * @var string
      */
-    protected $apiBaseProdUrl = 'https://payment.datatrans.biz/upp/jsp';
+    protected $apiBaseProdUrl = 'https://api.sandbox.datatrans.com/upp/jsp';
     /**
      * The XML API Endpoint Base URL
      *
      * @var string
      */
-    protected $apiBaseTestUrl = 'https://pilot.datatrans.biz/upp/jsp';
+    protected $apiBaseTestUrl = 'https://pay.sandbox.datatrans.com/upp/jsp';
 
     /**
      * defines the endpoint for a specific api
