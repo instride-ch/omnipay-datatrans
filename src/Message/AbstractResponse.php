@@ -25,12 +25,12 @@ abstract class AbstractResponse extends OmnipayAbstractResponse implements Redir
     /**
      * @var string
      */
-    protected $productionEndpoint = 'https://payment.datatrans.biz/upp/jsp/upStart.jsp';
+    protected $productionEndpoint = 'https://pay.datatrans.com/upp/jsp/upStart.jsp';
 
     /**
      * @var string
      */
-    protected $testEndpoint = 'https://pay.datatrans.com/upp/jsp/upStart.jsp';
+    protected $testEndpoint = 'https://pay.sandbox.datatrans.com/upp/jsp/upStart.jsp';
 
     /*** STATUS CODES ****/
     /**
