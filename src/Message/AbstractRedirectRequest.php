@@ -22,8 +22,7 @@ abstract class AbstractRedirectRequest extends AbstractRequest
      * @var array
      */
     protected $optionalParams = array(
-        'uppReturnMaskedCC',
-        'useAlias',
+
     );
 
     /**
@@ -38,13 +37,13 @@ abstract class AbstractRedirectRequest extends AbstractRequest
             'refno'      => $this->getTransactionId(),
             'amount'     => $this->getAmountInteger(),
             'currency'   => $this->getCurrency(),
-            'sign'       => $this->getSign(),
+            'sign'       => $this->getSign()
         );
 
         foreach ($this->optionalParams as $param) {
             $value = $this->getParameter($param);
 
-            if (!empty($value)) {
+            if ($value !== '') {
                 $data[$param] = $value;
             }
         }
@@ -91,23 +90,5 @@ abstract class AbstractRedirectRequest extends AbstractRequest
     public function sendData($data)
     {
         return $this->response = new PurchaseResponse($this, $data);
-    }
-
-    /**
-     * @param $value
-     * @return \Omnipay\Common\Message\AbstractRequest
-     */
-    public function setUppReturnMaskedCC($value)
-    {
-        return $this->setParameter('uppReturnMaskedCC', $value);
-    }
-
-    /**
-     * @param $value
-     * @return \Omnipay\Common\Message\AbstractRequest
-     */
-    public function setUseAlias($value)
-    {
-        return $this->setParameter('useAlias', $value);
     }
 }
