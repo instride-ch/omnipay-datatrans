@@ -16,5 +16,56 @@ namespace Omnipay\Datatrans\Message;
 
 class PurchaseRequest extends AbstractRedirectRequest
 {
+    /**
+     * @var array
+     */
+    protected $optionalParams = array(
+        'useAlias',
+        'uppReturnMaskedCC'
+    );
 
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        $data = parent::getData();
+
+        //set customer details if set
+        if (($customerDetails = $this->getParameter('uppCustomerDetails')) && is_array($customerDetails)){
+            $data['uppCustomerDetails'] = 'yes';
+            foreach ($customerDetails as $key => $value){
+                $data[$key] = $value;
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+      * @param $value
+      * @return \Omnipay\Common\Message\AbstractRequest
+      */
+    public function setUppReturnMaskedCC($value)
+    {
+        return $this->setParameter('uppReturnMaskedCC', $value);
+    }
+
+    /**
+     * @param $value
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function setUseAlias($value)
+    {
+        return $this->setParameter('useAlias', $value);
+    }
+
+    /**
+     * @param $value
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function setUppCustomerDetails($value)
+    {
+        return $this->setParameter('uppCustomerDetails', $value);
+    }
 }

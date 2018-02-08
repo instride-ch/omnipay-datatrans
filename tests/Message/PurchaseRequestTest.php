@@ -30,7 +30,9 @@ class PurchaseRequestTest extends TestCase
             'transactionId' => '123',
             'returnUrl' => 'https://www.example.com/success',
             'errorUrl' => 'https://www.example.com/error',
-            'cancelUrl' => 'https://www.example.com/cancel'
+            'cancelUrl' => 'https://www.example.com/cancel',
+            'uppReturnMaskedCC' => 'yes',
+            'useAlias' => ''
         ));
 
         $expected = array(
@@ -41,7 +43,8 @@ class PurchaseRequestTest extends TestCase
             'sign' => '123',
             'successUrl' => 'https://www.example.com/success',
             'errorUrl' => 'https://www.example.com/error',
-            'cancelUrl' => 'https://www.example.com/cancel'
+            'cancelUrl' => 'https://www.example.com/cancel',
+            'uppReturnMaskedCC' => 'yes'
         );
 
         $this->assertEquals($expected, $this->request->getData());
