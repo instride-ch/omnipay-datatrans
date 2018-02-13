@@ -32,9 +32,9 @@ class PurchaseRequest extends AbstractRedirectRequest
         $data = parent::getData();
 
         //set customer details if set
-        if (($customerDetails = $this->getParameter('uppCustomerDetails')) && is_array($customerDetails)){
+        if (($customerDetails = $this->getParameter('uppCustomerDetails')) && is_array($customerDetails)) {
             $data['uppCustomerDetails'] = 'yes';
-            foreach ($customerDetails as $key => $value){
+            foreach ($customerDetails as $key => $value) {
                 $data[$key] = $value;
             }
         }
