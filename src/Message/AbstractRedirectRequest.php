@@ -43,7 +43,7 @@ abstract class AbstractRedirectRequest extends AbstractRequest
         foreach ($this->optionalParams as $param) {
             $value = $this->getParameter($param);
 
-            if ($value !== '') {
+            if (!empty($value)) {
                 $data[$param] = $value;
             }
         }
