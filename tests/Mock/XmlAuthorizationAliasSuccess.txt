@@ -1,0 +1,40 @@
+HTTP/1.1 200 OK
+Expires: Sat, 6 May 1995 12:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+P3P: CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+Strict-Transport-Security: max-age=15768000; includeSubdomains
+X-XSS-Protection: 1; mode=block
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1091
+Date: Tue, 10 Jan 2017 14:45:02 GMT
+Server: -
+
+<?xml version='1.0' encoding='UTF-8'?>
+<authorizationService version='3'>
+  <body merchantId='TEST-TOKEN-123' status='accepted'>
+    <transaction refno='1' trxStatus='response'>
+      <request>
+        <amount>10000</amount>
+        <currency>CHF</currency>
+        <aliasCC>13820602628130529</aliasCC>
+        <uppReturnMaskedCC>yes</uppReturnMaskedCC>
+        <expm>12</expm>
+        <expy>18</expy>
+        <useAlias>no</useAlias>
+        <sign>TEST-SIGN-123</sign>
+        <reqtype>NOA</reqtype>
+      </request>
+      <response>
+        <responseCode>01</responseCode>
+        <responseMessage>Authorized</responseMessage>
+        <uppTransactionId>44E89981F8714392Y</uppTransactionId>
+        <authorizationCode>123</authorizationCode>
+        <acqAuthorizationCode>123</acqAuthorizationCode>
+        <maskedCC>490000xxxxxx0086</maskedCC>
+        <returnCustomerCountry>CH</returnCustomerCountry>
+        <aliasCC>13820602628130529</aliasCC>
+      </response>
+    </transaction>
+  </body>
+</authorizationService>

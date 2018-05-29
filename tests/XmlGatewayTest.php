@@ -50,6 +50,26 @@ class XmlGatewayTest extends GatewayTestCase
         $this->assertEquals('Authorized', $response->getMessage());
     }
 
+    public function testAuthorizeAlias()
+    {
+        $this->setMockHttpResponse('XmlAuthorizationAliasSuccess.txt');
+
+        $this->options = array_merge($this->options, array(
+            'useAlias' => 'yes',
+            'uppReturnMaskedCC' => 'yes'
+        ));
+
+        $response = $this->gateway->authorize($this->options)->send();
+
+        $this->assertTrue($response->isSuccessful());
+        $this->assertEquals('Authorized', $response->getMessage());
+
+        //check for alias and masked cc
+        $data = $response->getData();
+        $this->assertEquals('13820602628130529', $data['response']['aliasCC']);
+        $this->assertEquals('490000xxxxxx0086', $data['response']['maskedCC']);
+    }
+
     public function testPurchase()
     {
         $this->setMockHttpResponse('XmlAuthorizationSuccess.txt');
