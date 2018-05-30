@@ -21,7 +21,8 @@ class PurchaseRequest extends AbstractRedirectRequest
      */
     protected $optionalParams = array(
         'useAlias',
-        'uppReturnMaskedCC'
+        'uppReturnMaskedCC',
+        'uppRememberMe'
     );
 
     /**
@@ -67,5 +68,14 @@ class PurchaseRequest extends AbstractRedirectRequest
     public function setUppCustomerDetails($value)
     {
         return $this->setParameter('uppCustomerDetails', $value);
+    }
+
+    /**
+     * @param $value
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function setUppRememberMe($value)
+    {
+        return $this->setParameter('uppRememberMe', $value);
     }
 }
