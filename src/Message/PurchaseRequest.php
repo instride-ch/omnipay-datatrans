@@ -22,7 +22,8 @@ class PurchaseRequest extends AbstractRedirectRequest
     protected $optionalParams = array(
         'useAlias',
         'uppReturnMaskedCC',
-        'uppRememberMe'
+        'uppRememberMe',
+        'paymentMethod'
     );
 
     /**
@@ -40,13 +41,16 @@ class PurchaseRequest extends AbstractRedirectRequest
             }
         }
 
+        // card data for prefilling redirect form
+        $this->addCardData($data);
+
         return $data;
     }
 
     /**
-      * @param $value
-      * @return \Omnipay\Common\Message\AbstractRequest
-      */
+     * @param $value
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
     public function setUppReturnMaskedCC($value)
     {
         return $this->setParameter('uppReturnMaskedCC', $value);
@@ -77,5 +81,33 @@ class PurchaseRequest extends AbstractRedirectRequest
     public function setUppRememberMe($value)
     {
         return $this->setParameter('uppRememberMe', $value);
+    }
+
+    /**
+     * enable functionality to prefill datatrans form in redirect mode
+     *
+     * @param $data
+     */
+    private function addCardData(&$data)
+    {
+        // rename paymentmethod if set
+        if (isset($data['paymentMethod'])) {
+            $data['paymentmethod'] = $data['paymentMethod'];
+            unset($data['paymentMethod']);
+        }
+
+        if ($card = $this->getCard()) {
+            if ($expMonth = $card->getExpiryMonth()) {
+                $data['expm'] = $expMonth;
+            }
+
+            if ($expYear = $card->getExpiryDate('y')) {
+                $data['expy'] = $expYear;
+            }
+
+            if ($number = $card->getNumber()) {
+                $data['aliasCC'] = $number;
+            }
+        }
     }
 }
