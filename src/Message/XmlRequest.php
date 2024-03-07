@@ -1,6 +1,7 @@
 <?php
+
 /**
- * w-vision
+ * instride AG
  *
  * LICENSE
  *
@@ -8,8 +9,8 @@
  * For the full copyright and license information, please view the LICENSE.md
  * file that are distributed with this source code.
  *
- * @copyright  Copyright (c) 2016 Woche-Pass AG (http://www.w-vision.ch)
- * @license    MIT License
+ * @copyright 2024 instride AG (https://instride.ch)
+ * @license   MIT License
  */
 
 namespace Omnipay\Datatrans\Message;
@@ -159,7 +160,7 @@ abstract class XmlRequest extends AbstractRequest
             // Empty response body should be parsed also as and empty array
             $body = $httpResponse->getBody(true);
             $xmlResponse = !empty($body) ? $httpResponse->xml() : '';
-            
+
             if ($xmlResponse instanceof \SimpleXMLElement) {
                 $response = $xmlResponse->body->transaction;
 

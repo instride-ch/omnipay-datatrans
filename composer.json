@@ -1,5 +1,5 @@
 {
-    "name": "w-vision/omnipay-datatrans",
+    "name": "instride/omnipay-datatrans",
     "type": "library",
     "description": "Datatrans Gateway for the Omnipay payment processing library",
     "keywords": [
@@ -10,12 +10,14 @@
         "pay",
         "payment"
     ],
-    "homepage": "https://github.com/w-vision/omnipay-datatrans",
+    "homepage": "https://github.com/instride-ch/omnipay-datatrans",
     "license": "MIT",
     "authors": [
         {
-            "name": "Dominik Pfaffenbauer",
-            "email": "dominik@pfaffenbauer.at"
+            "name": "instride AG",
+            "email": "connect@instride.ch",
+            "homepage": "https://instride.ch",
+            "role": "Digital Agency"
         }
     ],
     "autoload": {
@@ -31,5 +33,5 @@
         "branch-alias": {
           "dev-master": "1.0.x-dev"
         }
-  }
+    }
 }

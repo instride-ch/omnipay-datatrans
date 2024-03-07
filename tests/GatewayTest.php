@@ -79,7 +79,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         //$this->getHttpRequest()->request->replace($data);
-        // Response comes from an redirected POST Request, so we need to use either $_POST or $_REQUEST
+        // Response comes from a redirected POST Request, so we need to use either $_POST or $_REQUEST
         foreach($data as $key=>$value) {
             $_REQUEST[$key] = $value;
         }
@@ -121,7 +121,7 @@ class GatewayTest extends GatewayTestCase
         // create sha hash for the given data
 
         //$this->getHttpRequest()->request->replace($data);
-        // Response comes from an redirected POST Request, so we need to use either $_POST or $_REQUEST
+        // Response comes from a redirected POST Request, so we need to use either $_POST or $_REQUEST
         foreach($data as $key=>$value) {
             $_REQUEST[$key] = $value;
         }
@@ -147,7 +147,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         //$this->getHttpRequest()->request->replace($data);
-        // Response comes from an redirected POST Request, so we need to use either $_POST or $_REQUEST
+        // Response comes from a redirected POST Request, so we need to use either $_POST or $_REQUEST
         foreach($data as $key=>$value) {
             $_REQUEST[$key] = $value;
         }
