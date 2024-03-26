@@ -27,7 +27,8 @@ class XmlAuthorizationRequest extends XmlRequest
      */
     protected $optionalParameters = array(
         'reqtype',
-        'uppCustomerIpAddress'
+        'uppCustomerIpAddress',
+        'useAlias'
     );
 
     /**
@@ -58,7 +59,7 @@ class XmlAuthorizationRequest extends XmlRequest
             'aliasCC'    => $this->getCard()->getNumber(),
             'expm'       => $this->getCard()->getExpiryMonth(),
             'expy'       => $this->getCard()->getExpiryDate('y'),
-            'useAlias' => 'no'
+            'useAlias'   => 'no'
         );
 
         foreach ($this->optionalParameters as $param) {
@@ -79,5 +80,14 @@ class XmlAuthorizationRequest extends XmlRequest
     protected function createResponse($data)
     {
         return $this->response = new XmlAuthorizationResponse($this, $data);
+    }
+
+    /**
+     * @param $value
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function setUseAlias($value)
+    {
+        return $this->setParameter('useAlias', $value);
     }
 }
